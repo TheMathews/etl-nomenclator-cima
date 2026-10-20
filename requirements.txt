@@ -1,0 +1,7 @@
+requests
+oracledb
+charset-normalizer
+xmlschema
+py-cpuinfo
+psutil
+distro

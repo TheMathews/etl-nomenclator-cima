@@ -1,0 +1,23 @@
+{
+    "url_cima": "https://listadomedicamentos.aemps.gob.es/prescripcion.zip",
+    "path_temp": "temp/",
+    "log_file": "logs/etl_cima.log",
+    "max_log_mb": 5.0,
+    "template_monitor_html": "templates/alerta_monitor.html",
+    "email_notificaciones": ["admin@tuservidor.com"],
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+    "tablas": [
+        {
+            "fichero_xml": "DICCIONARIO_ATC.xml",
+            "script_base": "NOM_MAE_ATC",
+            "tabla_staging": "NOM_MAE_ATC_TMP",
+            "campos_clob": [],
+            "mapa_campos": {
+                "nroatc": "id",
+                "codigoatc": "codigo",
+                "descatc": "descripcion",
+                "HASH_REGISTRO": "HashCalculado"
+            }
+        }
+    ]
+}

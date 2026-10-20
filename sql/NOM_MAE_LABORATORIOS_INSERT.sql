@@ -1,0 +1,1 @@
+INSERT INTO NOM_MAE_LABORATORIOS (id, descripcion, direccion, codigopostal, localidad, cif, HashCalculado) SELECT id, descripcion, direccion, codigopostal, localidad, cif, HashCalculado FROM NOM_MAE_LABORATORIOS_TMP WHERE id NOT IN (SELECT DISTINCT id FROM NOM_MAE_LABORATORIOS)

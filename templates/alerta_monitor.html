@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<body style="font-family: Arial, sans-serif; color: #333;">
+    <h2 style="color: #dc3545;"> ALERTA: Problemas en ETL Nomenclátor CIMA</h2>
+    <p>Se requiere revisión manual del proceso de integración de medicamentos.</p>
+    
+    <table style="border-collapse: collapse; width: 100%; max-width: 600px; margin-bottom: 20px;">
+        <tr><td style="padding: 8px; border-bottom: 1px solid #ddd;"><strong>Servidor BBDD Afectado:</strong></td>
+            <td style="padding: 8px; border-bottom: 1px solid #ddd; background-color: #f8f9fa;">{SERVIDOR_BBDD}</td></tr>
+        <tr><td style="padding: 8px; border-bottom: 1px solid #ddd;"><strong>Máquina de Ejecución:</strong></td>
+            <td style="padding: 8px; border-bottom: 1px solid #ddd; background-color: #f8f9fa;">{MAQUINA_EJECUCION}</td></tr>
+        <tr><td style="padding: 8px; border-bottom: 1px solid #ddd;"><strong>Fecha Ejecución:</strong></td>
+            <td style="padding: 8px; border-bottom: 1px solid #ddd;">{FECHA_INICIO} a {FECHA_FIN}</td></tr>
+        <tr><td style="padding: 8px; border-bottom: 1px solid #ddd;"><strong>Estado Global:</strong></td>
+            <td style="padding: 8px; border-bottom: 1px solid #ddd; color: {COLOR_ESTADO}; font-weight: bold;">{ESTADO}</td></tr>
+    </table>
+
+    {ALERTAS_HTML}
+
+    <!-- NUEVO BLOQUE DE TELEMETRÍA -->
+    <h3 style="color: #0056b3;">️ Entorno de Ejecución (Telemetría):</h3>
+    <table style="border-collapse: collapse; width: 100%; max-width: 800px; font-size: 13px; margin-bottom: 20px;">
+        <tr>
+            <td style="padding: 6px; border: 1px solid #ddd; background-color: #f8f9fa;"><strong>Sistema OS:</strong></td>
+            <td style="padding: 6px; border: 1px solid #ddd;">{OS_NAME}</td>
+            <td style="padding: 6px; border: 1px solid #ddd; background-color: #f8f9fa;"><strong>IP Local:</strong></td>
+            <td style="padding: 6px; border: 1px solid #ddd;">{IP_LOCAL}</td>
+        </tr>
+        <tr>
+            <td style="padding: 6px; border: 1px solid #ddd; background-color: #f8f9fa;"><strong>Usuario SO:</strong></td>
+            <td style="padding: 6px; border: 1px solid #ddd;">{USUARIO}</td>
+            <td style="padding: 6px; border: 1px solid #ddd; background-color: #f8f9fa;"><strong>RAM / CPU:</strong></td>
+            <td style="padding: 6px; border: 1px solid #ddd;">{RAM_MB} MB / {CPU}</td>
+        </tr>
+    </table>
+
+    <h3 style="color: #0056b3;"> Detalle de la ejecución:</h3>
+    <table style="border-collapse: collapse; width: 100%; max-width: 800px; font-size: 14px;">
+        <tr style="background-color: #f8f9fa;">
+            <th style="padding: 10px; border: 1px solid #ddd; text-align: left;">Fichero</th>
+            <th style="padding: 10px; border: 1px solid #ddd; text-align: center;">Estado</th>
+        </tr>
+        {FICHEROS_HTML}
+    </table>
+    
+    {AVISO_LOG_HTML}
+</body>
+</html>
